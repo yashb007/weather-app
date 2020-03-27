@@ -7,6 +7,8 @@ const forecast = require('./utilis/forecast');
 // console.log(path.join(__dirname,'../public'))
 
 const app = express();
+const port = process.env.PORT || 3000 
+
 const  publicPath = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname, '../temp/views')
 const partialpath = path.join(__dirname, '../temp/partials')
@@ -71,6 +73,6 @@ app.get('*', (req, res) =>{
   res.send("404 error")
 })
 
-app.listen(3000, () =>{
-    console.log('Server is started');
+app.listen(port, () =>{
+    console.log('Server is started at port no ' + port );
 })
